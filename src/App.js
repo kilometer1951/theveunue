@@ -1,25 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { Element } from "react-scroll";
+
+import "./resources/styles.css";
+import Header from "./components/Header";
+import Featured from "./components/Featured";
+import VenueInfo from "./components/VenueInfo";
+import Highlights from "./components/highlight";
+import Price from "./components/Price";
+import Location from "./components/Location";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Header />
+        <Element name="featured">
+          <Featured />
+        </Element>
+
+        <Element name="venueinfo">
+          <VenueInfo />
+        </Element>
+
+        <Element name="highlights">
+          <Highlights />
+        </Element>
+
+        <Element name="price">
+          <Price />
+        </Element>
+
+        <Element name="location">
+          <Location />
+        </Element>
       </div>
     );
   }
